@@ -1,0 +1,53 @@
+<div class="testimonial-section">
+    <div class="container-fluid px-sm-0">
+        <div class="row mx-sm-0">
+            <div class="col-lg-12">
+                <div class="testimonial-title">
+                    <h2>A customer said about us</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mx-sm-0">
+            <div class="col-lg-12 px-sm-0">
+                <div #testimonialsSliderWrapper class="testimonials-slider-wrapper">
+                    <div class="inner">
+                        <div class="testimonials-slider testimonials-slider--left">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <app-testimonial-card class="swiper-slide"
+                                        *ngFor="let testimonial of testimonialsLeftData; let i = index"
+                                        [testimonial]="testimonial"></app-testimonial-card>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-slider testimonials-slider--center ">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <app-testimonial-card class="swiper-slide"
+                                        *ngFor="let testimonial of testimonialsData; let i = index"
+                                        [testimonial]="testimonial"></app-testimonial-card>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-slider testimonials-slider--right">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <app-testimonial-card class="swiper-slide"
+                                        *ngFor="let testimonial of testimonialsRightData; let i = index"
+                                        [testimonial]="testimonial"></app-testimonial-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials-slider-controls">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

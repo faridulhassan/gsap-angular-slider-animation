@@ -1,0 +1,155 @@
+.testimonial-section {
+  padding: 2rem 0rem 5rem 0rem;
+  background-color: #121517;
+  background-image: url("https://assets.glowingbud.com/66b0937c890d154d7d510e15/background/testimonial-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  .testimonial-title {
+    margin: 3rem 0rem 4rem;
+
+    h2 {
+      color: white;
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 50px;
+    }
+  }
+
+  .testimonials-slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+
+    > .inner {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      position: relative;
+    }
+    .testimonials-slider {
+      flex: 0 0 40%; /* Partially visible children */
+      max-width: 40%;
+      font-size: 1.5em;
+      color: #fff;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+
+      ::ng-deep .inner {
+        opacity: 0.5;
+      }
+
+      &.testimonials-slider--center {
+        // flex: 0 0 40%; /* Centered child */
+        // max-width: 40%;
+        border-radius: 18px;
+        box-shadow: 0px 2px 6px 2px #232222;
+        ::ng-deep .inner {
+          opacity: 1;
+          background-color: #323943;
+          border-radius: 18px;
+        }
+      }
+    }
+    .testimonials-slider-controls {
+      position: relative;
+      margin: 60px auto 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 400px;
+      max-width: 90%;
+      .swiper-button-prev,
+      .swiper-button-next {
+        position: static;
+        margin: 0;
+        &::after {
+          font-size: 30px;
+          font-weight: bold;
+        }
+      }
+      .swiper-pagination {
+        position: static;
+        width: auto;
+        ::ng-deep .swiper-pagination-bullet {
+          width: 15px;
+          height: 15px;
+          background-color: white;
+          margin: 6px 10px 0;
+          opacity: 1;
+          transition: all 0.2s ease-in;
+          &.swiper-pagination-bullet-active {
+            background-color: #479af7;
+          }
+        }
+      }
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1366px) {
+    .testimonials-slider-wrapper {
+      > .inner {
+        gap: 35px;
+      }
+
+      .testimonials-slider {
+        max-width: 65%;
+      }
+      .testimonials-slider-controls {
+        margin: 30px auto 15px;
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .testimonials-slider-wrapper {
+      .testimonials-slider {
+        max-width: 70%;
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    .testimonials-slider-wrapper {
+      .testimonials-slider {
+        max-width: 75%;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .testimonials-slider-wrapper {
+      .testimonials-slider {
+        &.testimonials-slider--left,
+        &.testimonials-slider--right {
+          visibility: hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 0;
+          overflow: hidden;
+        }
+        &.testimonials-slider--center {
+          max-width: 96%;
+        }
+      }
+      .testimonials-slider-controls {
+        .swiper-pagination {
+          ::ng-deep .swiper-pagination-bullet {
+            height: 10px;
+            width: 10px;
+            &.swiper-pagination-bullet-active {
+              width: 25px;
+              // height: 13px;
+              border-radius: 10px;
+            }
+          }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          &::after {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
