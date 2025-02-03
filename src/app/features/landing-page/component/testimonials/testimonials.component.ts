@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import Swiper from 'swiper/bundle';
 
-import 'swiper/css/bundle';
+// import 'swiper/css/bundle';
 
 import { TestimonialCardComponent } from '../../../../testimonial-card/testimonial-card.component';
 
